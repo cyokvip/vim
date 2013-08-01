@@ -14,6 +14,14 @@ syntax on
 let mapleader = ","
 "快速保存
 nmap w :w!<cr>
+
+source $VIMRUNTIME/mswin.vim
+behave mswin
+
+" 带有如下符号的单词不要被换行分割
+set iskeyword+=_,$,@,%,#,-
+
+
 "--------
 " Vim UI
 "--------
@@ -46,7 +54,8 @@ set backspace=indent,eol,start                                    " More powerfu
 set t_Co=256                                                      " Explicitly tell vim that the terminal has 256 colors "
 set mouse=a                                                       " use mouse in all modes
 set report=0                                                      " always report number of lines changed                "
-set nowrap                                                        " dont wrap lines
+"set nowrap                                                        " dont wrap lines
+set wrap
 set scrolloff=5                                                   " 5 lines above/below cursor when scrolling
 set number                                                        " show line numbers
 set showmatch                                                     " show matching bracket (briefly jump)
@@ -150,14 +159,35 @@ if executable('coffeetags')
     \ }
 endif
 
-" Nerd Tree
-let NERDChristmasTree=0
-let NERDTreeWinSize=30
-let NERDTreeChDirMode=2
-let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$']
-" let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\~$']
+"{{{{NERD_tree.vim 
+" 让Tree把自己给装饰得多姿多彩漂亮点
+let NERDChristmasTree=1
+" 控制当光标移动超过一定距离时，是否自动将焦点调整到屏中心
+let NERDTreeAutoCenter=1
+" 指定书签文件
+let NERDTreeBookmarksFile=$VIMFILES.'\NERDTree_bookmarks'
+" 指定鼠标模式(1.双击打开 2.单目录双文件 3.单击打开)
+let NERDTreeMouseMode=2
+" 是否默认显示书签列表
 let NERDTreeShowBookmarks=1
-let NERDTreeWinPos = "right"
+" 是否默认显示文件
+let NERDTreeShowFiles=1
+" 是否默认显示隐藏文件
+let NERDTreeShowHidden=0
+" 是否默认显示行号
+let NERDTreeShowLineNumbers=0
+" 窗口位置（'left' or 'right'）
+let NERDTreeWinPos='left'
+" 窗口宽度
+let NERDTreeWinSize=31
+" 如果只有一个buffer，kill窗口也kill掉buffer
+let Tlist_Exist_OnlyWindow = 1
+" 不要关闭其他文件的tags
+let Tlist_File_Fold_Auto_Close = 0
+" 不要显示折叠树
+let Tlist_Enable_Fold_Column = 0
+map <silent> <F9> :NERDTreeToggle<cr>
+"}}}
 
 " nerdcommenter
 let NERDSpaceDelims=1
@@ -249,8 +279,8 @@ if has("gui_running")
     "set transparency=30
     set guifont=Monaco:h13
     set showtabline=2
-    set columns=140
-    set lines=40
+    "set columns=140
+    "set lines=40
     noremap <D-M-Left> :tabprevious<cr>
     noremap <D-M-Right> :tabnext<cr>
     map <D-1> 1gt
