@@ -1,5 +1,5 @@
-source $VIM\bundles.vim
-
+"source $VIM\bundles.vim
+source F:/vim/bundles.vim
 
 " encoding dectection
 set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
