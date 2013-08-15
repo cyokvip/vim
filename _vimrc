@@ -229,7 +229,24 @@ let NERDSpaceDelims=1
 let NERDCompactSexyComs=1
 
 " ZenCoding
-let g:user_zen_expandabbr_key='<C-j>'
+"let g:user_zen_expandabbr_key='<C-j>'
+"emment
+let g:user_emmet_settings = {
+  \  'indentation' : '  ',
+  \  'perl' : {
+  \    'aliases' : {
+  \      'req' : 'require '
+  \    },
+  \    'snippets' : {
+  \      'use' : "use strict\nuse warnings\n\n",
+  \      'warn' : "warn \"|\";",
+  \    }
+  \  }
+  \}
+
+  let g:user_emmet_expandabbr_key = '<c-e>'
+
+  let g:use_emmet_complete_tag = 1
 
 " powerline
 "let g:Powerline_symbols = 'fancy'

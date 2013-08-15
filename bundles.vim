@@ -18,11 +18,10 @@ Bundle 'gmarik/vundle'
 "------------------
 "Bundle 'Shougo/neocomplcache'
 Bundle 'vim-scripts/AutoComplPop'
-Bundle 'vim-scripts/DoxygenToolkit'
-"Bundle 'honza/vim-snippets'
+Bundle 'vim-scripts/DoxygenToolkit.vim'
+Bundle 'honza/vim-snippets'
 Bundle 'ervandew/supertab'
 Bundle 'vim-scripts/bufexplorer.zip'
-Bundle 'honza/snipmate-snippets'
 Bundle 'vim-scripts/Emmet.vim'
 Bundle 'Raimondi/delimitMate'
 "------ snipmate dependencies -------
