@@ -228,6 +228,9 @@ let NERDSpaceDelims=1
 " nmap <D-/> :NERDComToggleComment<cr>
 let NERDCompactSexyComs=1
 
+" ZenCoding
+let g:user_zen_expandabbr_key='<C-j>'
+
 " powerline
 "let g:Powerline_symbols = 'fancy'
 
