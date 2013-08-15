@@ -1,10 +1,13 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-set rtp+=~/.vim/bundle/vundle/
+"set rtp+=~/.vim/bundle/vundle/
+set rtp+=/home/peter/.vim/bundle/vundle/
 
+"set rtp+=Z:/Dropbox/vim/bundle/vundle/
 
-call vundle#rc()
+"call vundle#rc("Z:/Dropbox/vim/bundle/")
+call vundle#rc("/home/peter/.vim/bundle/")
 
 " let Vundle manage Vundle
 " required!
@@ -13,11 +16,14 @@ Bundle 'gmarik/vundle'
 "------------------
 " Code Completions
 "------------------
-Bundle 'Shougo/neocomplcache'
+"Bundle 'Shougo/neocomplcache'
+Bundle 'vim-scripts/AutoComplPop'
+Bundle 'vim-scripts/DoxygenToolkit'
 "Bundle 'honza/vim-snippets'
 Bundle 'ervandew/supertab'
+Bundle 'vim-scripts/bufexplorer.zip'
 Bundle 'honza/snipmate-snippets'
-Bundle 'mattn/zencoding-vim'
+Bundle 'vim-scripts/Emmet.vim'
 Bundle 'Raimondi/delimitMate'
 "------ snipmate dependencies -------
 Bundle 'MarcWeber/vim-addon-mw-utils'
@@ -28,7 +34,6 @@ Bundle 'tomtom/tlib_vim'
 "-----------------
 Bundle 'tsaleh/vim-matchit'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'widox/vim-buffer-explorer-plugin'
 
 "--------------
 " Fast editing

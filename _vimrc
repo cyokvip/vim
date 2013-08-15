@@ -1,8 +1,25 @@
 "source $VIM\bundles.vim
-source F:/vim/bundles.vim
+"source Z:/Dropbox/vim/bundles.vim
+source /home/peter/.vim/bundles.vim
 
 " encoding dectection
-set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
+"set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
+"set encoding=utf-8
+"set termencoding=utf-8
+
+"编码设置
+set enc=utf-8
+set termencoding=utf-8
+"解决consle输出乱码
+language messages zh_CN.utf-8
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+" 设置文件编码检测类型及支持格式
+set fencs=ucs-bom,utf-8,chinese
+"语言设置
+set langmenu=zh_CN.UTF-8
+"设置中文帮助
+
+set helplang=cn
 
 " enable filetype dectection and ft specific plugin/indent
 filetype plugin indent on
@@ -14,6 +31,8 @@ syntax on
 let mapleader = ","
 "快速保存
 nmap w :w!<cr>
+"文件更新时自动重新读取文件
+set autoread
 
 source $VIMRUNTIME/mswin.vim
 behave mswin
@@ -21,6 +40,9 @@ behave mswin
 " 带有如下符号的单词不要被换行分割
 set iskeyword+=_,$,@,%,#,-
 
+"搜索逐字符高亮
+set hlsearch
+set incsearch
 
 "--------
 " Vim UI
@@ -76,13 +98,25 @@ set shiftwidth=4    " indent width
 " set smarttab
 set expandtab       " expand tab to space
 
-autocmd FileType php setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
-autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
-autocmd FileType php setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
-autocmd FileType coffee,javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
-autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
-autocmd FileType html,htmldjango,xhtml,haml setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=0
-autocmd FileType sass,scss,css setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
+"加上去复制不能用
+"autocmd FileType php setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
+"autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
+"autocmd FileType php setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
+"autocmd FileType coffee,javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
+"autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
+"autocmd FileType html,htmldjango,xhtml,haml setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=0
+"autocmd FileType sass,scss,css setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
+
+"{{{DoxygenToolkit注释
+"以上分别使用DoxLic、DoxAuthor、Dox命令自动生成，注释的样式和文字完全可配置，在vimrc中添加即可。生成完注释，可以结合doxygen自动生成各种格式的文档。
+let g:DoxygenToolkit_authorName="Peter, cyokvip@gmail.com"
+let s:licenseTag = "Copyright(C)\<enter>"
+let s:licenseTag = s:licenseTag . "For free\<enter>"
+let s:licenseTag = s:licenseTag . "All right reserved\<enter>"
+let g:DoxygenToolkit_licenseTag = s:licenseTag
+let g:DoxygenToolkit_briefTag_funcName="yes"
+let g:doxygen_enhanced_color=1
+"}}}
 
 " syntax support
 autocmd Syntax javascript set syntax=jquery   " JQuery syntax support
@@ -186,16 +220,13 @@ let Tlist_Exist_OnlyWindow = 1
 let Tlist_File_Fold_Auto_Close = 0
 " 不要显示折叠树
 let Tlist_Enable_Fold_Column = 0
-map <silent> <F9> :NERDTreeToggle<cr>
+
 "}}}
 
 " nerdcommenter
 let NERDSpaceDelims=1
 " nmap <D-/> :NERDComToggleComment<cr>
 let NERDCompactSexyComs=1
-
-" ZenCoding
-let g:user_zen_expandabbr_key='<C-j>'
 
 " powerline
 "let g:Powerline_symbols = 'fancy'
@@ -232,8 +263,11 @@ set wildignore+=*/tmp/*,*.so,*.o,*.a,*.obj,*.swp,*.zip,*.pyc,*.pyo,*.class,.DS_S
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 
 " Keybindings for plugin toggle
-nmap <F5> :TagbarToggle<cr>
+map <F9> :DoxLic<CR>
+map <F8> :DoxAuthor<CR>
+map <F7> :Dox<CR>
 nmap <F6> :NERDTreeToggle<cr>
+nmap <F5> :TagbarToggle<cr>
 nmap <F3> :GundoToggle<cr>
 nmap <F4> :IndentGuidesToggle<cr>
 nmap  <D-/> :
@@ -275,9 +309,9 @@ nnoremap ; :
 
 " for macvim
 if has("gui_running")
-    set go=aAce  " remove toolbar
+    
     "set transparency=30
-    set guifont=Monaco:h13
+    set guifont=Monaco\ 13
     set showtabline=2
     "set columns=140
     "set lines=40
