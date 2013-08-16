@@ -94,11 +94,10 @@ set smartindent     " indent when
 set tabstop=4       " tab width
 set softtabstop=4   " backspace
 set shiftwidth=4    " indent width
+imap <Nul> <Space>
 " set textwidth=79
 " set smarttab
 set expandtab       " expand tab to space
-
-"加上去复制不能用
 "autocmd FileType php setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 "autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 "autocmd FileType php setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
@@ -354,3 +353,7 @@ if has("gui_running")
     set guioptions-=b " 隐藏底部滚动条
     set showtabline=1 " 隐藏Tab栏
 endif
+"保存文件自动删除行尾空格或tab"
+au BufWritePre * sil %s/\s\+$//e
+""
+au BufWritePre * %s/^$\n\+\%$//ge
