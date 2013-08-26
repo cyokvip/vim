@@ -19,7 +19,6 @@ Bundle 'gmarik/vundle'
 "Bundle 'Shougo/neocomplcache'
 Bundle 'vim-scripts/AutoComplPop'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
-Bundle 'honza/vim-snippets'
 Bundle 'ervandew/supertab'
 Bundle 'vim-scripts/bufexplorer.zip'
 Bundle 'vim-scripts/Emmet.vim'
@@ -27,6 +26,7 @@ Bundle 'Raimondi/delimitMate'
 "------ snipmate dependencies -------
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
+Bundle 'msanders/snipmate.vim'
 
 "-----------------
 " Fast navigation
