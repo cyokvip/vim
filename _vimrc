@@ -49,7 +49,13 @@ set incsearch
 "--------
 " color scheme
 
-colorscheme desert
+"colorscheme desert
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+endif
+colorscheme solarized
 
 " highlight current line
 au WinLeave * set nocursorline nocursorcolumn
@@ -192,7 +198,7 @@ if executable('coffeetags')
     \ }
 endif
 
-"{{{{NERD_tree.vim 
+"{{{{NERD_tree.vim
 " 让Tree把自己给装饰得多姿多彩漂亮点
 let NERDChristmasTree=1
 " 控制当光标移动超过一定距离时，是否自动将焦点调整到屏中心
@@ -328,7 +334,7 @@ nnoremap ; :
 
 " for macvim
 if has("gui_running")
-    
+
     "set transparency=30
     set guifont=Monaco\ 13
     set showtabline=2
@@ -354,6 +360,6 @@ if has("gui_running")
     set showtabline=1 " 隐藏Tab栏
 endif
 "保存文件自动删除行尾空格或tab"
-au BufWritePre * sil %s/\s\+$//e
+"au BufWritePre * sil %s/\s\+$//e
 ""
-au BufWritePre * %s/^$\n\+\%$//ge
+"au BufWritePre * %s/^$\n\+\%$//ge
