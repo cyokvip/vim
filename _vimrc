@@ -1,6 +1,7 @@
 "source $VIM\bundles.vim
 "source Z:/Dropbox/vim/bundles.vim
-source /Users/peter/.vim/bundles.vim
+"source /Users/peter/.vim/bundles.vim
+source /home/peter/.vim/bundles.vim
 
 " encoding dectection
 "set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
@@ -336,8 +337,8 @@ nnoremap ; :
 if has("gui_running")
 
     "set transparency=30
-    "set guifont=Monaco\ 13 "linux
-    set guifont=Monaco:h13 "mac
+    set guifont=Monaco\ 13 "linux
+    "set guifont=Monaco:h13 "mac
     set showtabline=2
     "set columns=140
     "set lines=40
