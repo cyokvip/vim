@@ -1,6 +1,11 @@
 "source $VIM\bundles.vim
+"windows
 "source Z:/Dropbox/vim/bundles.vim
+
+"mac
 "source /Users/peter/.vim/bundles.vim
+
+"linux
 source /home/peter/.vim/bundles.vim
 
 " encoding dectection
@@ -279,10 +284,6 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType c setlocal omnifunc=ccomplete#Complete
 
-" SuperTab
-"let g:SuperTabDefultCompletionType='context'
-let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
-let g:SuperTabRetainCompletionType=2
 
 " ctrlp
 set wildignore+=*/tmp/*,*.so,*.o,*.a,*.obj,*.swp,*.zip,*.pyc,*.pyo,*.class,.DS_Store  " MacOSX/Linux
