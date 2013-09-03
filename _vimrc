@@ -366,3 +366,5 @@ endif
 "au BufWritePre * sil %s/\s\+$//e
 ""
 "au BufWritePre * %s/^$\n\+\%$//ge
+"vimim输入法
+let g:vimim_map='c-bslash' "快捷键ctrl+\
