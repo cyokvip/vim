@@ -1,13 +1,13 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-set rtp+=/home/peter/.vim/bundle/vundle/
-"set rtp+=/Users/peter/.vim/bundle/vundle/
+"set rtp+=/home/peter/.vim/bundle/vundle/
+set rtp+=/Users/peter/.vim/bundle/vundle/
 "set rtp+=Z:/Dropbox/vim/bundle/vundle/
 
-call vundle#rc("/home/peter/.vim/bundle/")
+"call vundle#rc("/home/peter/.vim/bundle/")
 "call vundle#rc("Z:/Dropbox/vim/bundle/")
-"call vundle#rc("/Users/peter/.vim/bundle/")
+call vundle#rc("/Users/peter/.vim/bundle/")
 
 " let Vundle manage Vundle
 " required!
