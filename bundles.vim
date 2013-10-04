@@ -1,12 +1,16 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-"set rtp+=/home/peter/.vim/bundle/vundle/
-set rtp+=/Users/peter/.vim/bundle/vundle/
+"windows
 "set rtp+=Z:/Dropbox/vim/bundle/vundle/
-
-"call vundle#rc("/home/peter/.vim/bundle/")
 "call vundle#rc("Z:/Dropbox/vim/bundle/")
+
+"linux
+"set rtp+=/home/peter/.vim/bundle/vundle/
+"call vundle#rc("/home/peter/.vim/bundle/")
+
+"mac
+set rtp+=/Users/peter/.vim/bundle/vundle/
 call vundle#rc("/Users/peter/.vim/bundle/")
 
 " let Vundle manage Vundle
@@ -26,7 +30,6 @@ Bundle 'Raimondi/delimitMate'
 "------ snipmate dependencies -------
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
-Bundle 'msanders/snipmate.vim'
 
 "-----------------
 " Fast navigation
@@ -37,6 +40,7 @@ Bundle 'Lokaltog/vim-easymotion'
 "--------------
 " Fast editing
 "--------------
+Bundle 'vim-scripts/VimIM'
 Bundle 'tpope/vim-surround'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'sjl/gundo.vim'
