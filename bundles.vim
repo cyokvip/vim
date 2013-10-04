@@ -21,6 +21,7 @@ Bundle 'gmarik/vundle'
 " Code Completions
 "------------------
 "Bundle 'Shougo/neocomplcache'
+Bundle 'gmarik/vundle'
 Bundle 'vim-scripts/AutoComplPop'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'ervandew/supertab'
