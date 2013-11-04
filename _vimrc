@@ -53,7 +53,14 @@ set incsearch
 "--------
 " color scheme
 
-colorscheme desert
+"colorscheme desert
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+endif
+
+colorscheme solarized
 
 " highlight current line
 au WinLeave * set nocursorline nocursorcolumn
