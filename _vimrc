@@ -53,14 +53,13 @@ set incsearch
 "--------
 " color scheme
 
-"colorscheme desert
-if has('gui_running')
-    set background=light
-else
-    set background=dark
-endif
-
-colorscheme solarized
+colorscheme desert
+"if has('gui_running')
+"    set background=light
+"else
+"    set background=dark
+"endif 
+"colorscheme solarized
 
 " highlight current line
 au WinLeave * set nocursorline nocursorcolumn
@@ -336,7 +335,8 @@ nnoremap ; :
 " for macvim
 if has("gui_running")
 
-    "set transparency=30
+    set go=aAce "去掉难看的工具栏
+    set transparency=10 "透明背景"
     "set guifont=Monaco\ 13 "linux
     set guifont=Monaco:h13 "mac
     set showtabline=2
@@ -359,7 +359,7 @@ if has("gui_running")
     set guioptions-=L " 隐藏左侧滚动条
     set guioptions-=r " 隐藏右侧滚动条
     set guioptions-=b " 隐藏底部滚动条
-    set showtabline=1 " 隐藏Tab栏
+    set showtabline=1 " 隐藏Tab栏2是开启
 endif
 "保存文件自动删除行尾空格或tab"
 "au BufWritePre * sil %s/\s\+$//e
