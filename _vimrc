@@ -360,6 +360,10 @@ if has("gui_running")
     set guioptions-=r " 隐藏右侧滚动条
     set guioptions-=b " 隐藏底部滚动条
     set showtabline=1 " 隐藏Tab栏2是开启
+    "防止macvim选中会自动复制到系统剪切板
+    set guioptions-=a
+    set guioptions-=A
+    set guioptions-=aA
 endif
 "保存文件自动删除行尾空格或tab"
 "au BufWritePre * sil %s/\s\+$//e
