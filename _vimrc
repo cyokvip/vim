@@ -371,3 +371,9 @@ endif
 "au BufWritePre * %s/^$\n\+\%$//ge
 "vimim输入法
 let g:vimim_map='c-bslash' "快捷键ctrl+\
+"neocomplcache
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_quick_match = 1
+"会自动选中第一个"
+let g:neocomplcache_enable_auto_select = 1
+imap <expr> -  pumvisible() ? "\<Plug>(neocomplcache_start_unite_quick_match)" : '-'
