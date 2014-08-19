@@ -2,7 +2,7 @@
 "windows
 "source Z:/Dropbox/vim/bundles.vim
 "mac
-source /Users/peter/.vim/bundles.vim
+source /Users/chenyong/.vim/bundles.vim
 "linux
 "source /home/peter/.vim/bundles.vim
 
@@ -376,9 +376,9 @@ let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_quick_match = 1
 "会自动选中第一个"
 let g:neocomplcache_enable_auto_select = 1
-imap <expr> -  pumvisible() ? "\<Plug>(neocomplcache_start_unite_quick_match)" : '-'
+"imap <expr> -  pumvisible() ? "\<Plug>(neocomplcache_start_unite_quick_match)" : '-'
 
 "关闭文件后保存修改记录
-set undofile
-set undodir=F:/program/vim/aa
-set undolevels=1000 "maximum number of changes that can be undone"
+"set undofile
+"set undodir=F:/program/vim/aa
+"set undolevels=1000 "maximum number of changes that can be undone"
