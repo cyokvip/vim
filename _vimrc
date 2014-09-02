@@ -338,7 +338,7 @@ if has("gui_running")
     set go=aAce "去掉难看的工具栏
     set transparency=10 "透明背景"
     "set guifont=Monaco\ 13 "linux
-    set guifont=Monaco:h13 "mac
+    set guifont=Monaco:h14 "mac
     set showtabline=2
     "set columns=140
     "set lines=40
@@ -382,3 +382,6 @@ let g:neocomplcache_enable_auto_select = 1
 "set undofile
 "set undodir=F:/program/vim/aa
 "set undolevels=1000 "maximum number of changes that can be undone"
+
+"关闭vim声音
+set vb t_vb=
