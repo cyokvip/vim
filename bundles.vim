@@ -10,13 +10,11 @@ filetype off                   " required!
 "call vundle#rc("/home/peter/.vim/bundle/")
 
 "mac
-set rtp+=/Users/peter/.vim/bundle/vundle/
-call vundle#rc("/Users/peter/.vim/bundle/")
+set rtp+=/Users/chenyong/.vim/bundle/vundle/
+call vundle#rc("/Users/chenyong/.vim/bundle/")
 
 " let Vundle manage Vundle
 " required!
-Bundle 'gmarik/vundle'
-
 "------------------
 " Code Completions
 "------------------
@@ -37,7 +35,7 @@ Bundle 'tomtom/tlib_vim'
 "-----------------
 " Fast navigation
 "-----------------
-Bundle 'tsaleh/vim-matchit'
+Bundle 'vim-scripts/matchit.zip'
 Bundle 'Lokaltog/vim-easymotion'
 
 "--------------

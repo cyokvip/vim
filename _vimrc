@@ -53,13 +53,16 @@ set incsearch
 "--------
 " color scheme
 
-colorscheme desert
-"if has('gui_running')
-"    set background=light
-"else
-"    set background=dark
-"endif 
-"colorscheme solarized
+"colorscheme desert
+
+colorscheme solarized
+
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+endif
+
 
 " highlight current line
 au WinLeave * set nocursorline nocursorcolumn
@@ -336,9 +339,9 @@ nnoremap ; :
 if has("gui_running")
 
     set go=aAce "去掉难看的工具栏
-    set transparency=10 "透明背景"
+    "set transparency=10 "透明背景"
     "set guifont=Monaco\ 13 "linux
-    set guifont=Monaco:h14 "mac
+    set guifont=Monaco:h16 "mac
     set showtabline=2
     "set columns=140
     "set lines=40
