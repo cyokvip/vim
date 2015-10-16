@@ -2,7 +2,7 @@
 "windows
 "source Z:/Dropbox/vim/bundles.vim
 "mac
-source /Users/chenyong/.vim/bundles.vim
+source /Users/peter/.vim/bundles.vim
 "linux
 "source /home/peter/.vim/bundles.vim
 
@@ -55,12 +55,12 @@ set incsearch
 
 "colorscheme desert
 
-colorscheme solarized
-
 if has('gui_running')
+    colorscheme solarized
     set background=light
 else
-    set background=dark
+    colorscheme desert
+    "set background=dark
 endif
 
 
@@ -339,7 +339,7 @@ nnoremap ; :
 if has("gui_running")
 
     set go=aAce "去掉难看的工具栏
-    "set transparency=10 "透明背景"
+    set transparency=10 "透明背景"
     "set guifont=Monaco\ 13 "linux
     set guifont=Monaco:h16 "mac
     set showtabline=2
