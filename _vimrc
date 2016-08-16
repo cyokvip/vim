@@ -57,7 +57,7 @@ set incsearch
 
 if has('gui_running')
     colorscheme solarized
-  ""  set background=light
+    ""  set background=light
 else
     colorscheme desert
     "set background=dark
@@ -71,7 +71,7 @@ set cursorline cursorcolumn
 
 " search
 set incsearch
-"set highlight 	" conflict with highlight current line
+"set highlight  " conflict with highlight current line
 set ignorecase
 set smartcase
 
@@ -142,23 +142,23 @@ let g:html_indent_style1 = "inc"
 "-----------------
 " Rainbow parentheses for Lisp and variants
 let g:rbpt_colorpairs = [
-    \ ['brown',       'RoyalBlue3'],
-    \ ['Darkblue',    'SeaGreen3'],
-    \ ['darkgray',    'DarkOrchid3'],
-    \ ['darkgreen',   'firebrick3'],
-    \ ['darkcyan',    'RoyalBlue3'],
-    \ ['darkred',     'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['brown',       'firebrick3'],
-    \ ['gray',        'RoyalBlue3'],
-    \ ['black',       'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['Darkblue',    'firebrick3'],
-    \ ['darkgreen',   'RoyalBlue3'],
-    \ ['darkcyan',    'SeaGreen3'],
-    \ ['darkred',     'DarkOrchid3'],
-    \ ['red',         'firebrick3'],
-    \ ]
+            \ ['brown',       'RoyalBlue3'],
+            \ ['Darkblue',    'SeaGreen3'],
+            \ ['darkgray',    'DarkOrchid3'],
+            \ ['darkgreen',   'firebrick3'],
+            \ ['darkcyan',    'RoyalBlue3'],
+            \ ['darkred',     'SeaGreen3'],
+            \ ['darkmagenta', 'DarkOrchid3'],
+            \ ['brown',       'firebrick3'],
+            \ ['gray',        'RoyalBlue3'],
+            \ ['black',       'SeaGreen3'],
+            \ ['darkmagenta', 'DarkOrchid3'],
+            \ ['Darkblue',    'firebrick3'],
+            \ ['darkgreen',   'RoyalBlue3'],
+            \ ['darkcyan',    'SeaGreen3'],
+            \ ['darkred',     'DarkOrchid3'],
+            \ ['red',         'firebrick3'],
+            \ ]
 let g:rbpt_max = 16
 autocmd Syntax lisp,scheme,clojure,racket RainbowParenthesesToggle
 
@@ -182,27 +182,27 @@ let g:tagbar_sort = 0
 let g:tagbar_compact = 1
 " tag for coffee
 if executable('coffeetags')
-  let g:tagbar_type_coffee = {
-        \ 'ctagsbin' : 'coffeetags',
-        \ 'ctagsargs' : '',
-        \ 'kinds' : [
-        \ 'f:functions',
-        \ 'o:object',
-        \ ],
-        \ 'sro' : ".",
-        \ 'kind2scope' : {
-        \ 'f' : 'object',
-        \ 'o' : 'object',
-        \ }
-        \ }
+    let g:tagbar_type_coffee = {
+                \ 'ctagsbin' : 'coffeetags',
+                \ 'ctagsargs' : '',
+                \ 'kinds' : [
+                \ 'f:functions',
+                \ 'o:object',
+                \ ],
+                \ 'sro' : ".",
+                \ 'kind2scope' : {
+                \ 'f' : 'object',
+                \ 'o' : 'object',
+                \ }
+                \ }
 
-  let g:tagbar_type_markdown = {
-    \ 'ctagstype' : 'markdown',
-    \ 'sort' : 0,
-    \ 'kinds' : [
-        \ 'h:sections'
-    \ ]
-    \ }
+    let g:tagbar_type_markdown = {
+                \ 'ctagstype' : 'markdown',
+                \ 'sort' : 0,
+                \ 'kinds' : [
+                \ 'h:sections'
+                \ ]
+                \ }
 endif
 
 "{{{{NERD_tree.vim
@@ -244,21 +244,21 @@ let NERDCompactSexyComs=1
 "let g:user_zen_expandabbr_key='<C-j>'
 "emment
 let g:user_emmet_settings = {
-  \  'indentation' : '  ',
-  \  'perl' : {
-  \    'aliases' : {
-  \      'req' : 'require '
-  \    },
-  \    'snippets' : {
-  \      'use' : "use strict\nuse warnings\n\n",
-  \      'warn' : "warn \"|\";",
-  \    }
-  \  }
-  \}
+            \  'indentation' : '  ',
+            \  'perl' : {
+            \    'aliases' : {
+            \      'req' : 'require '
+            \    },
+            \    'snippets' : {
+            \      'use' : "use strict\nuse warnings\n\n",
+            \      'warn' : "warn \"|\";",
+            \    }
+            \  }
+            \}
 
-  let g:user_emmet_expandabbr_key = '<c-e>'
+let g:user_emmet_expandabbr_key = '<c-e>'
 
-  let g:use_emmet_complete_tag = 1
+let g:use_emmet_complete_tag = 1
 
 " powerline
 "let g:Powerline_symbols = 'fancy'
@@ -313,11 +313,11 @@ nnoremap <c-l> <c-w>l
 
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *
-      \ if ! exists("g:leave_my_cursor_position_alone") |
-      \     if line("'\"") > 0 && line ("'\"") <= line("$") |
-      \         exe "normal g'\"" |
-      \     endif |
-      \ endif
+            \ if ! exists("g:leave_my_cursor_position_alone") |
+            \     if line("'\"") > 0 && line ("'\"") <= line("$") |
+            \         exe "normal g'\"" |
+            \     endif |
+            \ endif
 
 " w!! to sudo & write a file
 cmap w!! w !sudo tee >/dev/null %
@@ -357,7 +357,7 @@ if has("gui_running")
     map <D-8> 8gt
     map <D-9> 9gt
     map <D-0> :tablast<CR>
-	set guioptions-=m " 隐藏菜单栏
+    set guioptions-=m " 隐藏菜单栏
     set guioptions-=T " 隐藏工具栏
     set guioptions-=L " 隐藏左侧滚动条
     set guioptions-=r " 隐藏右侧滚动条
@@ -385,9 +385,6 @@ let g:neocomplcache_enable_auto_select = 1
 "set undofile
 "set undodir=F:/program/vim/aa
 "set undolevels=1000 "maximum number of changes that can be undone"
-let g:formatterpath = ['/Users/chenyong/Documents/data/format']
-noremap <F3> :Autoformat<CR>
-au BufWrite * :Autoformat
 
 "关闭vim声音
 set vb t_vb=
