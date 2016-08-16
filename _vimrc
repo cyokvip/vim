@@ -2,7 +2,7 @@
 "windows
 "source Z:/Dropbox/vim/bundles.vim
 "mac
-source /Users/peter/.vim/bundles.vim
+source /Users/chenyong/.vim/bundles.vim
 "linux
 "source /home/peter/.vim/bundles.vim
 
@@ -57,7 +57,7 @@ set incsearch
 
 if has('gui_running')
     colorscheme solarized
-    set background=light
+  ""  set background=light
 else
     colorscheme desert
     "set background=dark
@@ -219,7 +219,7 @@ let NERDTreeShowBookmarks=1
 " 是否默认显示文件
 let NERDTreeShowFiles=1
 " 是否默认显示隐藏文件
-let NERDTreeShowHidden=0
+let NERDTreeShowHidden=1
 " 是否默认显示行号
 let NERDTreeShowLineNumbers=0
 " 窗口位置（'left' or 'right'）
@@ -296,7 +296,7 @@ map <F8> :DoxAuthor<CR>
 map <F7> :Dox<CR>
 nmap <F6> :NERDTreeToggle<cr>
 nmap <F5> :TagbarToggle<cr>
-nmap <F3> :GundoToggle<cr>
+"nmap <F3> :GundoToggle<cr>
 nmap <F4> :IndentGuidesToggle<cr>
 nmap  <D-/> :
 nnoremap <leader>a :Ack
@@ -339,9 +339,9 @@ nnoremap ; :
 if has("gui_running")
 
     set go=aAce "去掉难看的工具栏
-    set transparency=10 "透明背景"
+    "set transparency=10 "透明背景"
     "set guifont=Monaco\ 13 "linux
-    set guifont=Monaco:h16 "mac
+    set guifont=Monaco:h13 "mac
     set showtabline=2
     "set columns=140
     "set lines=40
@@ -385,6 +385,9 @@ let g:neocomplcache_enable_auto_select = 1
 "set undofile
 "set undodir=F:/program/vim/aa
 "set undolevels=1000 "maximum number of changes that can be undone"
+let g:formatterpath = ['/Users/chenyong/Documents/data/format']
+noremap <F3> :Autoformat<CR>
+au BufWrite * :Autoformat
 
 "关闭vim声音
 set vb t_vb=

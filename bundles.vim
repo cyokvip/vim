@@ -18,6 +18,8 @@ call vundle#rc("/Users/chenyong/.vim/bundle/")
 "------------------
 " Code Completions
 "------------------
+"代码格式化
+Bundle 'Chiel92/vim-autoformat'
 "Bundle 'Shougo/neocomplcache'
 Bundle 'gmarik/vundle'
 "Bundle 'vim-scripts/AutoComplPop'
