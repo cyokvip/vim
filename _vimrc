@@ -56,7 +56,8 @@ set incsearch
 "colorscheme desert
 
 if has('gui_running')
-    colorscheme solarized
+    colorscheme desert
+    "colorscheme solarized
     ""  set background=light
 else
     colorscheme desert
@@ -121,7 +122,7 @@ set expandtab       " expand tab to space
 
 "{{{DoxygenToolkit注释
 "以上分别使用DoxLic、DoxAuthor、Dox命令自动生成，注释的样式和文字完全可配置，在vimrc中添加即可。生成完注释，可以结合doxygen自动生成各种格式的文档。
-let g:DoxygenToolkit_authorName="Peter, cyokvip@gmail.com"
+let g:DoxygenToolkit_authorName="CY"
 let s:licenseTag = "Copyright(C)\<enter>"
 let s:licenseTag = s:licenseTag . "For free\<enter>"
 let s:licenseTag = s:licenseTag . "All right reserved\<enter>"
@@ -175,7 +176,7 @@ hi Tb_VisibleChanged guifg=green ctermbg=252 ctermfg=white
 let g:EasyMotion_leader_key = '<Leader>'
 
 " Tagbar
-let g:tagbar_left=1
+let g:tagbar_left=0 "0右边显示
 let g:tagbar_width=30
 let g:tagbar_autofocus = 1
 let g:tagbar_sort = 0
@@ -287,8 +288,35 @@ autocmd FileType c setlocal omnifunc=ccomplete#Complete
 
 
 " ctrlp
+"<leader>-f模糊搜索最近打开的文件(MRU)
+"<leader>-p模糊搜索当前目录及其子目录下的所有文件
+"c-j/k 上下选择
 set wildignore+=*/tmp/*,*.so,*.o,*.a,*.obj,*.swp,*.zip,*.pyc,*.pyo,*.class,.DS_Store  " MacOSX/Linux
-let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+"let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+let g:ctrlp_map = '<leader>p'
+let g:ctrlp_cmd = 'CtrlP'
+map <leader>f :CtrlPMRU<CR>
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
+    \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
+    \ }
+let g:ctrlp_working_path_mode=0
+let g:ctrlp_match_window_bottom=1
+let g:ctrlp_max_height=15
+let g:ctrlp_match_window_reversed=0
+let g:ctrlp_mruf_max=500
+let g:ctrlp_follow_symlinks=1
+
+"ctrlp-funky
+"<leader>fu 进入当前文件的函数列表搜索
+"<leader>fU 搜索当前光标下单词对应的函数
+nnoremap <Leader>fu :CtrlPFunky<Cr>
+" narrow the list down with a word under cursor
+nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
+let g:ctrlp_funky_syntax_highlight = 1
+
+let g:ctrlp_extensions = ['funky']
+
 
 " Keybindings for plugin toggle
 map <F9> :DoxLic<CR>
@@ -301,6 +329,7 @@ nmap <F4> :IndentGuidesToggle<cr>
 nmap  <D-/> :
 nnoremap <leader>a :Ack
 nnoremap <leader>v V`]
+nnoremap <leader>h :GundoToggle<CR>
 
 "------------------
 " Useful Functions
@@ -372,8 +401,6 @@ endif
 "au BufWritePre * sil %s/\s\+$//e
 ""
 "au BufWritePre * %s/^$\n\+\%$//ge
-"vimim输入法
-let g:vimim_map='c-bslash' "快捷键ctrl+\
 "neocomplcache
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_quick_match = 1
@@ -382,9 +409,12 @@ let g:neocomplcache_enable_auto_select = 1
 "imap <expr> -  pumvisible() ? "\<Plug>(neocomplcache_start_unite_quick_match)" : '-'
 
 "关闭文件后保存修改记录
-"set undofile
-"set undodir=F:/program/vim/aa
-"set undolevels=1000 "maximum number of changes that can be undone"
+set undofile
+set undodir=/Users/chenyong/.vim/cache
+set undolevels=1000 "最大撤回数量"
 
 "关闭vim声音
 set vb t_vb=
+"定义try cache 模板
+inoremap try try{<CR><CR>}catch( \Exception $e){<CR>}<ESC>2ki<Tab>
+
