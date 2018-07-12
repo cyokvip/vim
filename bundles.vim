@@ -107,5 +107,6 @@ Bundle 'Lokaltog/vim-distinguished'
 Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'fisadev/fisa-vim-colorscheme'
 
+Bundle 'vim-scripts/taglist.vim'
 
 filetype plugin indent on     " required!

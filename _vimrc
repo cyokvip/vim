@@ -319,13 +319,13 @@ let g:ctrlp_extensions = ['funky']
 
 
 " Keybindings for plugin toggle
-map <F9> :DoxLic<CR>
-map <F8> :DoxAuthor<CR>
-map <F7> :Dox<CR>
-nmap <F6> :NERDTreeToggle<cr>
-nmap <F5> :TagbarToggle<cr>
+"map <F9> :DoxLic<CR>
+"map <F8> :DoxAuthor<CR>
+"map <F7> :Dox<CR>
+"nmap <F6> :NERDTreeToggle<cr>
+"nmap <F5> :TagbarToggle<cr>
 "nmap <F3> :GundoToggle<cr>
-nmap <F4> :IndentGuidesToggle<cr>
+"nmap <F4> :IndentGuidesToggle<cr>
 nmap  <D-/> :
 nnoremap <leader>a :Ack
 nnoremap <leader>v V`]
@@ -411,10 +411,31 @@ let g:neocomplcache_enable_auto_select = 1
 "关闭文件后保存修改记录
 set undofile
 set undodir=/Users/chenyong/.vim/cache
-set undolevels=1000 "最大撤回数量"
+set undolevels=1000 "历史记录数量"
 
 "关闭vim声音
 set vb t_vb=
 "定义try cache 模板
 inoremap try try{<CR><CR>}catch( \Exception $e){<CR>}<ESC>2ki<Tab>
 
+
+"":TlistToggle 启动Taglist功能
+"ctrl+]跳转 ctrl+t 返回
+"vimrc快捷设置
+"设置ctags路径
+""设置taglist打开关闭的快捷键F8
+noremap <F8> :TlistToggle<CR>
+"更新ctags标签文件快捷键设置
+noremap <F6> :!ctags -R<CR>
+let Tlist_Ctags_Cmd = '/usr/bin/ctags'   "设定Linux系统中ctags程序的位置
+let Tlist_Show_One_File=1    "不同时显示多个文件的tag，只显示当前文件的
+let Tlist_Exit_OnlyWindow=1  "如果taglist窗口是最后一个窗口，则退出vim
+let Tlist_Use_Right_Window = 1         "在右侧窗口中显示taglist窗口
+"let Tlist_Use_SingleClick= 1    "
+"缺省情况下，在双击一个tag时，才会跳到该tag定义的位置
+"
+"let Tlist_Auto_Open=1    "在启动VIM后，自动打开taglist窗口
+"let Tlist_Process_File_Always=1
+""taglist始终解析文件中的tag，不管taglist窗口有没有打开
+
+let Tlist_File_Fold_Auto_Close=1 "同时显示多个文件中的tag时，可使taglist只显示当前文件tag，其它文件的tag都被折叠起来"
