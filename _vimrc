@@ -56,8 +56,8 @@ set incsearch
 "colorscheme desert
 
 if has('gui_running')
-    colorscheme desert
-    "colorscheme solarized
+    "colorscheme desert
+    colorscheme solarized
     ""  set background=light
 else
     colorscheme desert
@@ -399,7 +399,6 @@ if has("gui_running")
 endif
 "保存文件自动删除行尾空格或tab"
 "au BufWritePre * sil %s/\s\+$//e
-""
 "au BufWritePre * %s/^$\n\+\%$//ge
 "neocomplcache
 let g:neocomplcache_enable_at_startup = 1
@@ -439,3 +438,48 @@ let Tlist_Use_Right_Window = 1         "在右侧窗口中显示taglist窗口
 ""taglist始终解析文件中的tag，不管taglist窗口有没有打开
 
 let Tlist_File_Fold_Auto_Close=1 "同时显示多个文件中的tag时，可使taglist只显示当前文件tag，其它文件的tag都被折叠起来"
+set tags+=tags.vendor "先ctag -R -h .php 重命名为tags.vendor
+
+"autocmd BufWritePre *.php silent execute "![ -d app ] && ctags -R app"
+"autocmd BufWritePre  execute "!ctags -R app"
+
+"自动加载Php命名空间
+"vim-php-namespace
+function! IPhpInsertUse()
+    call PhpInsertUse()
+    call feedkeys('a',  'n')
+endfunction
+autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
+autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
+
+function! IPhpExpandClass()
+    call PhpExpandClass()
+    call feedkeys('a', 'n')
+endfunction
+autocmd FileType php inoremap <Leader>e <Esc>:call IPhpExpandClass()<CR>
+autocmd FileType php noremap <Leader>e :call PhpExpandClass()<CR>
+
+autocmd FileType php inoremap <Leader>s <Esc>:call PhpSortUse()<CR>
+autocmd FileType php noremap <Leader>s :call PhpSortUse()<CR>
+
+let g:php_namespace_sort_after_insert = 1
+
+function! DelTagOfFile(file)
+  let fullpath = a:file
+  let cwd = getcwd()
+  let tagfilename = cwd . "/tags"
+  let f = substitute(fullpath, cwd . "/", "", "")
+  let f = escape(f, './')
+  let cmd = 'sed -i "/' . f . '/d" "' . tagfilename . '"'
+  let resp = system(cmd)
+endfunction
+
+function! UpdateTags()
+  let f = expand("%:p")
+  let cwd = getcwd()
+  let tagfilename = cwd . "/tags"
+  let cmd = 'ctags -a -f ' . tagfilename . ' --c++-kinds=+p --fields=+iaS --extra=+q ' . '"' . f . '"'
+  call DelTagOfFile(f)
+  let resp = system(cmd)
+endfunction
+autocmd BufWritePost *.php call UpdateTags()

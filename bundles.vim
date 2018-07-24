@@ -107,6 +107,9 @@ Bundle 'Lokaltog/vim-distinguished'
 Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'fisadev/fisa-vim-colorscheme'
 
+"函数跳转
 Bundle 'vim-scripts/taglist.vim'
+"加载php命名空间
+Bundle 'arnaud-lb/vim-php-namespace'
 
 filetype plugin indent on     " required!
