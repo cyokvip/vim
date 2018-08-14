@@ -476,10 +476,13 @@ endfunction
 
 function! UpdateTags()
   let f = expand("%:p")
-  let cwd = getcwd()
+  "let cwd = getcwd()
+  let cwd = '/Users/chenyong/Documents/dev/ctags'
   let tagfilename = cwd . "/tags"
   let cmd = 'ctags -a -f ' . tagfilename . ' --c++-kinds=+p --fields=+iaS --extra=+q ' . '"' . f . '"'
   call DelTagOfFile(f)
   let resp = system(cmd)
 endfunction
+
+"保存时候执行
 autocmd BufWritePost *.php call UpdateTags()

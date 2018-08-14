@@ -21,7 +21,6 @@ call vundle#rc("/Users/chenyong/.vim/bundle/")
 Bundle 'gmarik/vundle'
 
 "代码格式化
-Bundle 'h2ero/phpcr'
 "Bundle 'vim-scripts/AutoComplPop'
 Bundle 'Shougo/neocomplcache.vim'
 "Bundle 'Shougo/unite.vim'
