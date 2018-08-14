@@ -29,7 +29,10 @@ set helplang=cn
 filetype plugin indent on
 
 " enable syntax hightlight and completion
-syntax on
+syntax enable                " 打开语法高亮 
+syntax on                    " 开启文件类型侦测
+filetype indent on           " 针对不同的文件类型采用不同的缩进格式
+filetype plugin on           " 针对不同的文件类型加载对应的插件
 " general
 "Set mapleader
 let mapleader = ","
@@ -408,15 +411,12 @@ let g:neocomplcache_enable_auto_select = 1
 "imap <expr> -  pumvisible() ? "\<Plug>(neocomplcache_start_unite_quick_match)" : '-'
 
 "关闭文件后保存修改记录
-set undofile
-set undodir=/Users/chenyong/.vim/cache
-set undolevels=1000 "历史记录数量"
+"set undofile
+"set undodir=/Users/chenyong/.vim/cache
+"set undolevels=1000 "历史记录数量"
 
 "关闭vim声音
 set vb t_vb=
-"定义try cache 模板
-inoremap try try{<CR><CR>}catch( \Exception $e){<CR>}<ESC>2ki<Tab>
-
 
 "":TlistToggle 启动Taglist功能
 "ctrl+]跳转 ctrl+t 返回
