@@ -59,9 +59,8 @@ set incsearch
 "colorscheme desert
 
 if has('gui_running')
-    "colorscheme desert
+   set background=light
     colorscheme solarized
-    ""  set background=light
 else
     colorscheme desert
     "set background=dark
@@ -125,12 +124,20 @@ set expandtab       " expand tab to space
 
 "{{{DoxygenToolkit注释
 "以上分别使用DoxLic、DoxAuthor、Dox命令自动生成，注释的样式和文字完全可配置，在vimrc中添加即可。生成完注释，可以结合doxygen自动生成各种格式的文档。
+let g:DoxygenToolkit_briefTag_pre="@Synopsis  "
+let g:DoxygenToolkit_paramTag_pre="@Param "
+let g:DoxygenToolkit_returnTag="@Returns   "
+"let g:DoxygenToolkit_blockHeader="--------------------------------------------------------------------------"
+"let g:DoxygenToolkit_blockFooter="----------------------------------------------------------------------------"
 let g:DoxygenToolkit_authorName="CY"
-let s:licenseTag = "Copyright(C)\<enter>"
-let s:licenseTag = s:licenseTag . "For free\<enter>"
-let s:licenseTag = s:licenseTag . "All right reserved\<enter>"
-let g:DoxygenToolkit_licenseTag = s:licenseTag
-let g:DoxygenToolkit_briefTag_funcName="yes"
+let g:DoxygenToolkit_licenseTag="All license"   <-- !!! Does not end with "\<enter>">
+
+"let g:DoxygenToolkit_authorName="CY"
+"let s:licenseTag = "Copyright(C)\<enter>"
+"let s:licenseTag = s:licenseTag . "For free\<enter>"
+"let s:licenseTag = s:licenseTag . "All right reserved\<enter>"
+"let g:DoxygenToolkit_licenseTag = s:licenseTag
+"let g:DoxygenToolkit_briefTag_funcName="yes"
 let g:doxygen_enhanced_color=1
 "}}}
 
@@ -476,8 +483,7 @@ endfunction
 
 function! UpdateTags()
   let f = expand("%:p")
-  "let cwd = getcwd()
-  let cwd = '/Users/chenyong/Documents/dev/ctags'
+  let cwd = getcwd()
   let tagfilename = cwd . "/tags"
   let cmd = 'ctags -a -f ' . tagfilename . ' --c++-kinds=+p --fields=+iaS --extra=+q ' . '"' . f . '"'
   call DelTagOfFile(f)
@@ -486,3 +492,7 @@ endfunction
 
 "保存时候执行
 autocmd BufWritePost *.php call UpdateTags()
+
+inoremap try try{<CR><CR>}catch(\Exception $e){<CR>}<ESC>2ki<Tab>
+
+cd /Users/chenyong/Documents/dev/www
