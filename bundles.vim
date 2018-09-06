@@ -107,6 +107,7 @@ Bundle 'tpope/vim-vividchalk'
 Bundle 'Lokaltog/vim-distinguished'
 Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'fisadev/fisa-vim-colorscheme'
+Bundle 'morhetz/gruvbox'
 
 "函数跳转
 Bundle 'vim-scripts/taglist.vim'

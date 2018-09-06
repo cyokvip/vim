@@ -126,17 +126,16 @@ set expandtab       " expand tab to space
 "以上分别使用DoxLic、DoxAuthor、Dox命令自动生成，注释的样式和文字完全可配置，在vimrc中添加即可。生成完注释，可以结合doxygen自动生成各种格式的文档。
 let g:DoxygenToolkit_briefTag_pre="@Synopsis  "
 let g:DoxygenToolkit_paramTag_pre="@Param "
-let g:DoxygenToolkit_returnTag="@Returns   "
+let g:DoxygenToolkit_returnTag="@Returns"
 "let g:DoxygenToolkit_blockHeader="--------------------------------------------------------------------------"
 "let g:DoxygenToolkit_blockFooter="----------------------------------------------------------------------------"
 let g:DoxygenToolkit_authorName="CY"
-let g:DoxygenToolkit_licenseTag="All license"   <-- !!! Does not end with "\<enter>">
 
 "let g:DoxygenToolkit_authorName="CY"
-"let s:licenseTag = "Copyright(C)\<enter>"
-"let s:licenseTag = s:licenseTag . "For free\<enter>"
-"let s:licenseTag = s:licenseTag . "All right reserved\<enter>"
-"let g:DoxygenToolkit_licenseTag = s:licenseTag
+let s:licenseTag = "Copyright(C)\<enter>"
+let s:licenseTag = s:licenseTag . "For free\<enter>"
+let s:licenseTag = s:licenseTag . "All right reserved\<enter>"
+let g:DoxygenToolkit_licenseTag = s:licenseTag
 "let g:DoxygenToolkit_briefTag_funcName="yes"
 let g:doxygen_enhanced_color=1
 "}}}
@@ -306,11 +305,13 @@ set wildignore+=*/tmp/*,*.so,*.o,*.a,*.obj,*.swp,*.zip,*.pyc,*.pyo,*.class,.DS_S
 let g:ctrlp_map = '<leader>p'
 let g:ctrlp_cmd = 'CtrlP'
 map <leader>f :CtrlPMRU<CR>
+"<Leader>b显示缓冲区文件，并可通过序号进行跳转
+nmap <Leader>b :CtrlPBuffer<CR>
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
     \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
     \ }
-let g:ctrlp_working_path_mode=0
+let g:ctrlp_working_path_mode='ra'
 let g:ctrlp_match_window_bottom=1
 let g:ctrlp_max_height=15
 let g:ctrlp_match_window_reversed=0
