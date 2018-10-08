@@ -114,4 +114,7 @@ Bundle 'vim-scripts/taglist.vim'
 "加载php命名空间
 Bundle 'arnaud-lb/vim-php-namespace'
 
+"全文查询
+Bundle 'yegappan/grep'
+
 filetype plugin indent on     " required!
